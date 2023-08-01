@@ -1,0 +1,34 @@
+[versions]
+#libraries
+coroutines                  =   "1.7.3"
+kotlinxSerializationJson    =   "1.5.0"
+protobufJavaUtil            =   "3.22.2"
+protocJar                   =   "3.11.4"
+datastorePreferencesCore    =   "1.0.0"
+assertjCore                 =   "3.24.2"
+junit                       =   "4.13.2"
+mockk                       =   "1.13.5"
+
+# plugins
+kotlin                      =   "1.9.0"
+gradleIntelliJPlugin        =   "1.13.1"
+changelog                   =   "2.0.0"
+kotlinxSerialization        =   "1.8.10"
+
+
+[libraries]
+coroutinesCore              =   { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutinesTest              =   { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+kotlinxSerializationJson    =   { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+protobufJavaUtil            =   { group = "com.google.protobuf", name = "protobuf-java-util", version.ref = "protobufJavaUtil" }
+protocJar                   =   { group = "com.github.os72", name = "protoc-jar", version.ref = "protocJar" }
+datastorePreferencesCore    =   { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastorePreferencesCore" }
+assertjCore                 =   { group = "org.assertj", name = "assertj-core", version.ref = "assertjCore" }
+junit                       =   { group = "junit", name = "junit", version.ref = "junit" }
+mockk                       =   { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+
+[plugins]
+kotlin                      =   { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+gradleIntelliJPlugin        =   { id = "org.jetbrains.intellij", version.ref = "gradleIntelliJPlugin" }
+changelog                   =   { id = "org.jetbrains.changelog", version.ref = "changelog" }
+kotlinxSerialization        =   { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinxSerialization" }

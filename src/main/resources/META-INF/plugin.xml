@@ -1,0 +1,48 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.target.DataStoreExplorer</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>DataStoreExplorer</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="ritesh.singh@target.com" url="https://www.target.com">Target</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>Plugin designed for viewing the preferences and proto datastore file, in human-readable format. Directly open in IDE by
+        clicking on .pb file or .preferences_pb file, from device file explorer.
+    </description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+
+    <resource-bundle>messages.DataStoreBundle</resource-bundle>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Generated proto file"
+                  extensions="pb"
+                  language="proto"
+                  implementationClass="com.target.datastorexplorer.fileType.proto.ProtoFileType"/>
+
+        <fileEditorProvider implementation="com.target.datastorexplorer.provider.proto.ProtoProvider"/>
+
+        <notificationGroup displayType="BALLOON" id="DataStoreExplorerErrors"/>
+
+        <fileType name="Generated preference file"
+                  extensions="preferences_pb"
+                  language="preference"
+                  implementationClass="com.target.datastorexplorer.fileType.preferences.PreferencesFileType"
+        />
+
+        <fileEditorProvider implementation="com.target.datastorexplorer.provider.preferences.PreferencesProvider"/>
+
+    </extensions>
+</idea-plugin>
